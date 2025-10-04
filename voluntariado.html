@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>Pagina de Voluntariado</h1>
 
 
@@ -13,26 +14,37 @@
     <form action="index.html" style="text-align: center;">
             
             
-            <label for="name">Nome:</label><br>    
+            <label id="name">Nome:</label><br>    
             <input type="text" required><br>
 
-            <label for="sobrenome">Sobrenome</label><br>    
+            <label id="sobrenome">Sobrenome</label><br>    
             <input type="text"><br>
+            <label id="genero">Genero</label><br>
 
-            <label for="telefone">Telefone:</label><br>    
+            <select name="Gênero" style="text-align: left;">
+                <option value="Prefiro nao informar">Prefiro não informar</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                
+            </select><br>
+
+            <label id="telefone">Telefone:</label><br>    
             <input type="tel"><br>
-            <label for="email">E-mail:</label><br>    
+
+
+            <label id="email">E-mail:</label><br>    
             <input type="email"><br>
-            <label for="endereco">Endereço:</label><br>    
+            <label id="endereco">Endereço:</label><br>    
             <input type="text"><br>
-            <label for="cpf" >CPF</label><br>    
+            <label id="cpf" >CPF</label><br>    
             <input type="text" maxlength="14" placeholder="000.000.000-00"><br>
             <button type="submit">Enviar</button>
             <button type="reset">Limpar</button>
-            
-
-        </form>
-    <button><a href="index.html">Home</a></button>
+        
+        <button type="submit">Iniciar</button>"
     
+    </form>
+
+       
 </body>
 </html>
