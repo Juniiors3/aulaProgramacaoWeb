@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Vamos escolher nosso projeto?</h1>
+    </header>
+    <form action="parabéns.html">
+
+    <fieldset>
+        <legend>Dados do Usuário</legend>
+        <div>
+            <div>
+                <label id="nome" name="nome">Nome Completo</label><br>
+
+                <input type="text" id="nome" name="nome">
+            </div>
+
+            <div>
+                <label id="endereco" name="endereco">Endereço</label><br>
+                <input type="text" id="endereco" name="endereco">
+            </div>
+
+            <div>
+                <label for="tel" id="telefone" name="telefone">Telefone</label><br>
+                <input type="tel" name="telefone" placeholder="Formato: (00) 00000-0000" title="Formato: (00) 00000-0000" 
+                pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" required>
+            </div>
+      
+        </div>
+
+
+    </fieldset>
+    <fieldset>
+        <div>
+            
+            <datalist id="projetos">
+                <option value="Projeto Barriguinha Cheia">
+                <option value="Projeto Patinha Saudável">
+                <option value="Projeto Abrigo do Amor">
+                <option value="Projeto Escola Animal">
+                <option value="Projeto Final Feliz">
+            </datalist>
+
+            <label for="projetos">Qual projeto vamos voluntariar?</label><br>
+
+            <input list="projetos" id="projetos" name="projetos">
+
+
+        </div>
+    </fieldset>
+
+    <div style="text-align: center;">
+        <button type="submit" value="iniciar">Enviar</button>
+        <button type="reset" value="limpar">Limpar</button>
+
+    </div>
+    </form>
+<footer>
+<fieldset>
+    <p style="text-align: center;"><img src="/imagens/logomarca.png" alt="logomarca" width="50"
+    >Powered by Juniiors3 todos os direitos reservado ® </p>
+</fieldset>
+</footer>
+    
+</body>
+</html>
