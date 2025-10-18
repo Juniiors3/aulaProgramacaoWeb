@@ -1,67 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site Semântico — Início</title>
+<style>
+/* Estilos simples para visualização rápida */
+:root{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5}
+body{margin:0;padding:0;color:#222}
+header, nav, main, footer, article, aside, section{display:block;padding:1rem}
+nav ul{list-style:none;padding:0;display:flex;gap:1rem}
+a{color:inherit;text-decoration:none}
+.container{max-width:980px;margin:0 auto}
+.hero{background:#f3f4f6;border-radius:8px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+figure img{max-width:100%;height:auto;display:block;border-radius:6px}
+footer{font-size:.9rem;background:#111;color:#fff}
+</style>
 </head>
 <body>
-    <fieldset>
-  <legend>Informações Pessoais</legend>
+<header class="container">
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <h1>Minha Empresa — Soluções Web</h1>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul> 
+</nav>
+</div>
+</header>
 
-  <!-- Nome -->
-  <div>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required 
-           placeholder="Digite seu nome completo">
-  </div>
 
-  <!-- Sobrenome -->
-  <div>
-    <label for="sobrenome">Sobrenome:</label>
-    <input type="text" id="sobrenome" name="sobrenome" required 
-           placeholder="Digite seu sobrenome">
-  </div>
+<main class="container">
+<section class="hero" aria-labelledby="hero-title">
+<h2 id="hero-title">Bem-vindo ao nosso site</h2>
+<p>Exemplo de estrutura HTML5 semântica com hierarquia lógica de títulos e imagens.</p>
+<figure>
+<img src="images/hero.jpg" alt="Equipe reunida em escritório">
+<figcaption>Equipe trabalhando em soluções digitais.</figcaption>
+</figure>
+</section>
 
-  <!-- CPF -->
-  <div>
-    <label for="cpf">CPF:</label>
-    <input type="text" id="cpf" name="cpf"
-           maxlength="14"
-           placeholder="000.000.000-00"
-           pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-           title="Digite o CPF no formato 000.000.000-00"
-           inputmode="numeric"
-           required>
-  </div>
 
-  <!-- Data de Nascimento -->
-  <div>
-    <label for="dtnascimento">Data de Nascimento:</label>
-    <input type="date" id="dtnascimento" name="dtnascimento" required>
-  </div>
+<section aria-labelledby="servicos">
+<h2 id="servicos">Nossos Serviços</h2>
+<div class="cards">
 
-  <!-- Telefone -->
-  <div>
-    <label for="telefone">Telefone:</label>
-    <input type="tel" id="telefone" name="telefone"
-           pattern="\(\d{2}\)\s?\d{4,5}-\d{4}"
-           maxlength="15"
-           placeholder="(00) 00000-0000"
-           title="Digite o telefone no formato (00) 00000-0000"
-           inputmode="tel"
-           required>
-  </div>
+<article>
+<h3>Desenvolvimento Web</h3>
+<p>Criação de sites responsivos e acessíveis.</p>
+<figure>
+<img src="images/dev.jpg" alt="Tela com código fonte">
+<figcaption>Interfaces modernas e limpas.</figcaption>
+</figure>
+</article>
 
-  <!-- E-mail -->
-  <div>
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email"
-           placeholder="exemplo@dominio.com"
-           required>
-  </div>
-</fieldset>
 
-    
+<article>
+<h3>SEO e Conteúdo</h3>
+<p>Otimização para buscadores e produção de conteúdo persuasivo.</p>
+<figure>
+<img src="images/seo.jpg" alt="Gráfico de crescimento">
+<figcaption>Resultados em tráfego e conversões.</figcaption>
+</figure>
+</article>
+
+
+<article>
+<h3>Design e Marca</h3>
+<p>Identidade visual para fortalecer sua presença.</p>
+<figure>
+<img src="images/design.jpg" alt="Paleta de cores e logos">
+<figcaption>Branding consistente e memorável.</figcaption>
+</figure>
+</article>
+
+</div>
+</section>
+
+
+<aside aria-labelledby="depoimentos">
+<h2 id="depoimentos">Depoimento</h2>
+<blockquote>
+<p>"Trabalho profissional, entrega no prazo e ótimo suporte." — Cliente satisfeito</p>
+</blockquote>
+</aside>
+</main>
+
+
+<footer class="container">
+<p>&copy; <time datetime="2025">2025</time> Minha Empresa — Todos os direitos reservados.</p>
+</footer>
 </body>
-</html>

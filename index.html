@@ -6,39 +6,42 @@
     <title>Pagina Incial</title>
 </head>
 <body>
-    <header>
-        <h1> ONG Patinha Amiga</h1>
-        <h2>conforto sem falar uma palavra.</h2>
+    <header class="container">
+        <div style="display: flex;align-items: center;justify-content: space-between;">                
+            <h1> ONG Patinha Amiga - Conforto sem falar uma palavra. </h1>
+           <nav aria-label="navegacao principal"><!-- menu de opções-->
+                <ul>
+                    <li><a href="projetos.html">Projetos sociais</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <table> <!-- menu de opções-->
-            <tr>
-                <th><a href="projetos.html">Projetos sociais</a></th>
-                <th><a href="cadastro.html">Cadastro</a></th>
-            </tr>
-        </table>
-    </nav>
-    <main>
-        <section>
+      
+  
+    <main class="container">
+        <section class="stitulo" aria-labelledby="stitulo">
             <h2>Quem Somos</h2>
             <p> Somos uma Organização sem fins lucrativos que atua com animais abandonados</p>
+            <figure><img src="/imagens/cachorro-index.jpg" alt="doguinho" width="500"></figure>
+        </section>
         
-        </section>
-        <img src="/imagens/cachorro-index.jpg" alt="doguinho" width="250">
-        <div>
-            <article>
-                <h2>Missão da ONG</h2>
-                <p>promover dignidade e oportunidade de acolhimento</p>
-            </article>
-        </div>
         <section>
-            <h2>Contato com a ONG Patinha Amiga</h2>
-            <address>
-                <p>Endereço: rua dos magos, numero 75</p>
-                <p>Telefone: (61) 63288-9930 </p>
-                <p></p>
-            </address>
+            <h2>Missão da ONG</h2>
+            <div>
+                <p>promover dignidade e oportunidade de acolhimento</p>
+            </div>
+            <div>
+                <p>Contato com a ONG Patinha Amiga</p>
+            </div>
         </section>
+        
+        <address>
+            <p>Endereço: rua dos magos, numero 75</p>
+            <p>Telefone: (61) 63288-9930 </p>
+        
+        </address>
+
     </main>
     <footer>
         <fieldset>
