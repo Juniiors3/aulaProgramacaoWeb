@@ -1,96 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site Semântico — Início</title>
-<style>
-/* Estilos simples para visualização rápida */
-:root{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5}
-body{margin:0;padding:0;color:#222}
-header, nav, main, footer, article, aside, section{display:block;padding:1rem}
-nav ul{list-style:none;padding:0;display:flex;gap:1rem}
-a{color:inherit;text-decoration:none}
-.container{max-width:980px;margin:0 auto}
-.hero{background:#f3f4f6;border-radius:8px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-figure img{max-width:100%;height:auto;display:block;border-radius:6px}
-footer{font-size:.9rem;background:#111;color:#fff}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Assets/css/css.css">
+    <link rel="stylesheet" href="Assets/js/js.js">
+    <title>Pagina Incial</title>
 </head>
-<body>
-<header class="container">
-  <div style="display:flex;align-items:center;justify-content:space-between">
-    <h1>Minha Empresa — Soluções Web</h1>
-    <nav aria-label="Navegação principal">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul> 
-</nav>
-</div>
-</header>
+<body class="grid-pr">
+    <header class="header">
+        <img src="imagens/logomarca.png" width="100px"></a>
+        <div style="display: flex;align-items: center;justify-content: space-between;">                
+            <h1> ONG Patinha Amiga - Conforto sem falar uma palavra. </h1>
+           <nav aria-label="navegacao principal"><!-- menu de opções-->
+                <ul class="menu">
+                    <li><a href="projetos.html">Projetos sociais</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+      
+  
+    <main class="container">
+        <section class="stitulo" aria-labelledby="stitulo">
+            <h2>Quem Somos</h2>
+            <p> Somos uma Organização sem fins lucrativos que atua com animais abandonados</p>
+            <figure><img src="/imagens/cachorro-index.jpg" alt="doguinho" width="auto"></figure>
+        </section>
+        
+        <section class="flex">
+            <div>
+                <h2>Missão da ONG</h2>
+                <p>promover dignidade e oportunidade de acolhimento</p>
+            </div>
+            <div style="text-decoration:double;">
+                <h2>Contato com a ONG Patinha Amiga</h2>
+                <p>Endereço: rua dos magos, nº 75</p>
+                <p>Telefone: (61) 63288-9930</a></p>
+            </div>
+                    
+        </section>
 
-
-<main class="container">
-<section class="hero" aria-labelledby="hero-title">
-<h2 id="hero-title">Bem-vindo ao nosso site</h2>
-<p>Exemplo de estrutura HTML5 semântica com hierarquia lógica de títulos e imagens.</p>
-<figure>
-<img src="images/hero.jpg" alt="Equipe reunida em escritório">
-<figcaption>Equipe trabalhando em soluções digitais.</figcaption>
-</figure>
-</section>
-
-
-<section aria-labelledby="servicos">
-<h2 id="servicos">Nossos Serviços</h2>
-<div class="cards">
-
-<article>
-<h3>Desenvolvimento Web</h3>
-<p>Criação de sites responsivos e acessíveis.</p>
-<figure>
-<img src="images/dev.jpg" alt="Tela com código fonte">
-<figcaption>Interfaces modernas e limpas.</figcaption>
-</figure>
-</article>
-
-
-<article>
-<h3>SEO e Conteúdo</h3>
-<p>Otimização para buscadores e produção de conteúdo persuasivo.</p>
-<figure>
-<img src="images/seo.jpg" alt="Gráfico de crescimento">
-<figcaption>Resultados em tráfego e conversões.</figcaption>
-</figure>
-</article>
-
-
-<article>
-<h3>Design e Marca</h3>
-<p>Identidade visual para fortalecer sua presença.</p>
-<figure>
-<img src="images/design.jpg" alt="Paleta de cores e logos">
-<figcaption>Branding consistente e memorável.</figcaption>
-</figure>
-</article>
-
-</div>
-</section>
-
-
-<aside aria-labelledby="depoimentos">
-<h2 id="depoimentos">Depoimento</h2>
-<blockquote>
-<p>"Trabalho profissional, entrega no prazo e ótimo suporte." — Cliente satisfeito</p>
-</blockquote>
-</aside>
-</main>
-
-
-<footer class="container">
-<p>&copy; <time datetime="2025">2025</time> Minha Empresa — Todos os direitos reservados.</p>
-</footer>
+    </main>
+    <footer class="footer">
+        <fieldset>
+            <p style="text-align: center;"><img src="/imagens/logomarca.png" alt="logomarca" width="50">Powered by Juniiors3 todos os direitos reservado ® </p>
+        </fieldset>
+    </footer>
+    
 </body>
+</html>

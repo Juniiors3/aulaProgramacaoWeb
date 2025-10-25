@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina Incial</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Assets/css/css.css">
+  <script defer src="Assets/js/js.js"></script>
+  <title>Página Inicial</title>
 </head>
 <body>
-    <header class="container">
-        <div style="display: flex;align-items: center;justify-content: space-between;">                
-            <h1> ONG Patinha Amiga - Conforto sem falar uma palavra. </h1>
-           <nav aria-label="navegacao principal"><!-- menu de opções-->
-                <ul>
-                    <li><a href="projetos.html">Projetos sociais</a></li>
-                    <li><a href="cadastro.html">Cadastro</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-      
-  
-    <main class="container">
-        <section class="stitulo" aria-labelledby="stitulo">
-            <h2>Quem Somos</h2>
-            <p> Somos uma Organização sem fins lucrativos que atua com animais abandonados</p>
-            <figure><img src="/imagens/cachorro-index.jpg" alt="doguinho" width="500"></figure>
-        </section>
-        
-        <section>
-            <h2>Missão da ONG</h2>
-            <div>
-                <p>promover dignidade e oportunidade de acolhimento</p>
-            </div>
-            <div>
-                <p>Contato com a ONG Patinha Amiga</p>
-            </div>
-        </section>
-        
-        <address>
-            <p>Endereço: rua dos magos, numero 75</p>
-            <p>Telefone: (61) 63288-9930 </p>
-        
-        </address>
+  <header class="header">
+    <div class="header-content">
+      <img src="imagens/logomarca.png" width="100" alt="Logomarca Patinha Amiga">
 
-    </main>
-    <footer>
-        <fieldset>
-            <p style="text-align: center;"><img src="/imagens/logomarca.png" alt="logomarca" width="50">Powered by Juniiors3 todos os direitos reservado ® </p>
-        </fieldset>
-    </footer>
-    
+      <!-- botão hamburguer (só aparece no mobile) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+
+      <h1>ONG Patinha Amiga - Conforto sem falar uma palavra.</h1>
+    </div>
+
+    <!-- Navegação principal -->
+    <nav class="nav" id="mainNav" aria-label="Menu principal">
+      <ul class="menu">
+        <li><a href="projetos.html">Projetos sociais</a></li>
+        <li><a href="cadastro.html">Cadastro</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="stitulo" aria-labelledby="stitulo">
+      <h2>Quem Somos</h2>
+      <p>Somos uma organização sem fins lucrativos que atua com animais abandonados.</p>
+      <figure>
+        <img src="/imagens/cachorro-index.jpg" alt="Cachorro feliz no abrigo">
+      </figure>
+    </section>
+
+    <section class="flex">
+      <div>
+        <h2>Missão da ONG</h2>
+        <p>Promover dignidade e oportunidade de acolhimento.</p>
+      </div>
+      <div>
+        <h2>Contato com a ONG Patinha Amiga</h2>
+        <p>Endereço: Rua dos Magos, nº 75</p>
+        <p>Telefone: (61) 63288-9930</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <img src="/imagens/logomarca.png" alt="Logomarca" width="50">
+      Powered by Juniiors3 — todos os direitos reservados ®
+    </p>
+  </footer>
 </body>
 </html>
