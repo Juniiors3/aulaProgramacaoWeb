@@ -411,3 +411,90 @@ input:invalid {
 input:valid {
   border: 1px solid #20c997;
 }
+
+
+/*-----------------ATUALIZAÇÃO CORES COM TEMA----------------------*/
+
+/* ====== Modo Escuro e Alto Contraste ====== */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #f2f2f2;
+  }
+  .header, .footer {
+    background: #1f1f1f;
+  }
+  a, .btn {
+    color: #fff;
+    background-color: #333;
+  }
+  .card {
+    background: #1f1f1f;
+    border: 1px solid #444;
+  }
+}
+
+/* Botão de alternância manual */
+body.dark-mode {
+  background-color: #121212;
+  color: #f2f2f2;
+}
+body.dark-mode .header, body.dark-mode .footer {
+  background: #1f1f1f;
+}
+
+/*------------ALTO CONTRASTE----------------*/
+
+body.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast a,
+body.high-contrast button {
+  background-color: #000;
+  color: #ff0 !important;
+  border: 2px solid #ff0;
+}
+
+body.high-contrast input,
+body.high-contrast select,
+body.high-contrast textarea {
+  background-color: #000;
+  color: #ff0;
+  border: 2px solid #ff0;
+}
+
+.btn-contraste {
+  background: #222;
+  color: #fff;
+  border: 2px solid #555;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-contraste:hover,
+.btn-contraste:focus {
+  background: #555;
+  outline: 3px solid #ff0;
+}
+
+/* ===== FEEDBACK ===== */
+.input-erro {
+  border: 2px solid #ff0000 !important;
+  background-color: #fff5f5;
+}
+
+.input-valido {
+  border: 2px solid #00b341 !important;
+  background-color: #f0fff0;
+}
+
+.erro {
+  font-size: 0.875rem;
+  color: #ff0000;
+  margin-bottom: 8px;
+  display: block;
+}

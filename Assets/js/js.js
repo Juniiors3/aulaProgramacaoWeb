@@ -13,3 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.getElementById("toggle-contrast")?.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
