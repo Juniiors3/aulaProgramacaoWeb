@@ -396,3 +396,18 @@ figure img{ width:100%; height:auto; display:block; border-radius:8px }
 .footer, footer{ margin-top:var(--space-4); text-align:center; padding:var(--space-2); color:var(--color-muted) }
 
 :focus{ outline:3px solid rgba(13,110,253,0.08); outline-offset:2px }
+
+/*--------------------VISUAL FEEDBACK----------------*/
+
+.erro {
+  color: rgb(189, 13, 13);
+  font-size: 0.8rem;
+}
+
+input:invalid {
+  border: 1px solid #dc3545;
+}
+
+input:valid {
+  border: 1px solid #20c997;
+}
