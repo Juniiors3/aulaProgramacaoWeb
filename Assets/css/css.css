@@ -1,307 +1,398 @@
-body, ul, li, p, a{
-    margin: 0px;
-    padding: 0px;
-    list-style: none;
-    text-decoration: none;
+:root{
+  /* paleta (mín. 8 cores) */
+  --color-primary: #0d6efd;       /* azul primário - CTAs */
+  --color-primary-600: #0b5ed7;   /* hover primário */
+  --color-secondary: #6610f2;     /* roxo secundário */
+  --color-accent: #20c997;        /* verde - sucesso */
+  --color-warning: #ffc107;       /* amarelo - alerta */
+  --color-danger: #dc3545;        /* vermelho - erro */
+  --color-muted: #6c757d;         /* texto secundário */
+  --color-surface: #ffffff;       /* superfícies (cards, modais) */
+  --color-bg: #f7fbff;            /* fundo da aplicação */
+  --color-border: #e6eefc;        /* bordas suaves */
+  --color-text: #0f1724;          /* texto principal */
 
-} 
+  /* Estabelecer tipografia hierárquica com no mínimo 5 tamanhos de fonte (5 tamanhos) */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --fs-xs: 0.75rem;  /* 12px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem;   /* 16px */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.5rem;   /* 24px */
 
-a {
-    color: var(--color-surface);
-    font-size: 25px;
+  /* espaçamento modular (8px scale) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* radius e sombras */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-sm: 0 6px 18px rgba(12,20,40,0.06);
+  --shadow-md: 0 12px 30px rgba(12,20,40,0.08);
 }
- 
- :root{
-    /* ----- Paleta de cores (8+) ----- */
-      --color-primary: #0d6efd;        /* azul primário - ações */
-      --color-primary-600: #0b5ed7;    /* hover primário */
-      --color-secondary: #6610f2;      /* roxo secundário */
-      --color-accent: #20c997;         /* verde - sucesso */
-      --color-warning: #ffc107;        /* amarelo - alerta */
-      --color-danger: #dc3545;         /* vermelho - erro */
-      --color-muted: #6c757d;          /* texto secundário */
-      --color-surface: #ffffff;        /* superfície (cards, modais) */
-      --color-bg: #f7fbff;             /* fundo da aplicação */
-      --color-border: #e6eefc;         /* bordas suaves */
 
-      /* ----- Tipografia (5 tamanhos) ----- */
-      --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      --fs-xs: 0.75rem;  /* 12px */
-      --fs-sm: 0.875rem; /* 14px */
-      --fs-base: 1rem;   /* 16px */
-      --fs-lg: 1.125rem; /* 18px */
-      --fs-xl: 1.5rem;   /* 24px */
+/* ----------------------   RESET / BASE    ---------------------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body, ul, li, p, a {
+  margin:0; padding:0; list-style:none; text-decoration:none;
+}
+body{
+  font-family:var(--font-family-base);
+  font-size:var(--fs-base);
+  color:var(--color-text);
+  background:var(--color-bg);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-      /* ----- Espaçamento modular (8px scale) ----- */
-      --space-1: 8px;
-      --space-2: 16px;
-      --space-3: 24px;
-      --space-4: 32px;
-      --space-5: 48px;
-      --space-6: 64px;
+/* links globais */
+a{ color:var(--color-primary); text-decoration:none }
+a:hover{ text-decoration:underline }
 
-      /* Radius & shadow */
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --shadow-sm: 0 6px 18px rgba(12,20,40,0.06);
-      --shadow-md: 0 12px 30px rgba(12,20,40,0.08);
-    }
+/* container central */
+.container, .container-index, .container-projetos, .container-cadastro{
+  max-width:1200px;
+  margin:0 auto;
+  padding:var(--space-3);
+}
 
-    body {
-            
-        font-family: "Inter", Arial, sans-serif;
-        font-size: var(--font-md);
-        color: var(--color-text);
-        background-color: var(--color-bg);
-        margin: 0;
-        padding: var(--space-3);
-        background: var(--color-primary);
-        color: rgb(0, 0, 0);
-        padding: 16px;
-        box-shadow: var(--shadow);
-        position: sticky;
-        top: 0;
-    }
+/* ----------------------   HEADER & NAV   ---------------------- */
+/* tornar header contexto para elementos posicionados */
+
+.header, header.site-header {
+  position: relative; /* importante para posicionamento absoluto do menu */
+  background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(102,16,242,0.02));
+  border-radius:var(--radius-sm);
+  padding:var(--space-2);
+  box-shadow:var(--shadow-sm);
+}
+
+/* header-content alinha logo, titulo e botao*/
+.header-content, .header_cad, .header-content {
+  display:flex;
+  align-items:center;
+  gap:var(--space-3);
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+/* logo */
+.header img{ display:block; max-height:64px }
+
+/* titulo do header (quando presente) */
+.header h1{
+  font-size:var(--fs-lg);
+  margin-left:var(--space-2);
+  color:var(--color-text);
+}
+
+/* menu-hamburguer (visível em mobile) */
+.menu-toggle{
+  display:none; 
+  background:transparent;
+  border:0;
+  color:var(--color-primary-600);
+  font-size:1.5rem;
+  cursor:pointer;
+  z-index:1200;
+}
+
+/* nav e menu principal */
+.nav{ display:block }
+.menu{
+  display:flex;
+  gap:var(--space-2);
+  align-items:center;
+  justify-content:flex-end;
+  margin:0;
+}
+
+/* menu item visual */
+.menu li{
+  position:relative; /* importante para dropdown */
+}
+.menu li a{
+  display:inline-block;
+  color:var(--color-surface);
+  background:var(--color-primary);
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:600;
+  transition:all .15s ease;
+}
+.menu li a:hover, .menu li a:focus{
+  background:var(--color-primary-600);
+  transform:translateY(-2px);
+}
+
+/* estilo alternativo (quando desejar tags coloridas) */
+.menu li.tag{
+  background:var(--color-accent);
+}
+
+/* ----------------------   SUBMENU (dropdown)   ---------------------- */
+/* estrutura do submenu: posicionado em relação ao item pai (.menu li) */
+.submenu{
+  display:none; 
+  position:absolute;
+  top:calc(100% + 8px); /* logo abaixo do item */
+  left:0;
+  min-width:180px;
+  background:var(--color-surface);
+  color:var(--color-text);
+  border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-md);
+  border:1px solid var(--color-border);
+  padding:var(--space-1) 0;
+  z-index:1100;
+}
+
+/* link do submenu */
+.submenu li a{
+  display:block;
+  color:var(--color-text);
+  padding:8px 12px;
+  border-radius:6px;
+}
+.submenu li a:hover{ background:rgba(13,110,253,0.06) }
+
+/* mostrar submenu no hover (desktop) */
+.has-submenu:hover > .submenu,
+.has-submenu:focus-within > .submenu{ display:block }
+
+/* ----------------------
+   GRID 12 COLUNAS (utilitários)
+   ---------------------- */
+/* grid-12: container onde usamos colunas */
+.grid-12{
+  display:grid;
+  grid-template-columns:repeat(12, 1fr);
+  gap:var(--space-3);
+  align-items:start;
+}
+
+/* spans comuns - personalize conforme necessidade */
+.col-1{ grid-column:span 1 }
+.col-2{ grid-column:span 2 }
+.col-3{ grid-column:span 3 }
+.col-4{ grid-column:span 4 }
+.col-6{ grid-column:span 6 }
+.col-8{ grid-column:span 8 }
+.col-12{ grid-column:span 12 }
+
+/* helper para cards/areas */
+.section-hero{ grid-column: 1 / -1 }
+
+/* ----------------------   CARDS (componentes para projetos)   ---------------------- */
+.card{
+  background:var(--color-surface);
+  border-radius:var(--radius-md);
+  box-shadow:var(--shadow-sm);
+  border:1px solid var(--color-border);
+  padding:var(--space-3);
+  display:flex;
+  flex-direction:column;
+  gap:var(--space-2);
+}
+.card h3{ margin:0; font-size:var(--fs-lg) }
+.card p{ margin:0; color:var(--color-muted) }
+
+/* card-grid utilitário PAGINA PROJETOS */
+.card-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:var(--space-3);
+}
+
+/* ----------------------   BOTÕES (estados)   ---------------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  gap:8px; padding:8px 14px; border-radius:10px; border:0;
+  cursor:pointer; font-weight:700; font-size:var(--fs-sm);
+  color:var(--color-surface); background:var(--color-primary);
+  transition: all .12s ease;
+}
+.btn:hover{ background:var(--color-primary-600); transform: translateY(-2px) }
+.btn:active{ transform: translateY(0) scale(.995) }
+.btn:focus{ outline:3px solid rgba(13,110,253,0.12); outline-offset:2px }
+.btn[disabled]{ opacity:.5; cursor:not-allowed; transform:none }
+
+/* variantes */
+.btn.secondary{ background:var(--color-secondary); color: #fff }
+.btn.ghost{ background:transparent; color:var(--color-primary); border:1px solid rgba(13,110,253,0.12) }
+.btn.warn{ background:var(--color-warning); color:#222 }
+
+/* ----------------------   BADGES / TAGS   ---------------------- */
+.badge{
+  display:inline-block; padding:4px 10px; border-radius:999px;
+  font-size:var(--fs-xs); color:#fff; background:var(--color-muted);
+}
+.badge.primary{ background:var(--color-primary) }
+.badge.success{ background:var(--color-accent) }
+.badge.danger{ background:var(--color-danger) }
+
+/* ----------------------   FORMULÁRIOS PAGINA CADASTRO   ---------------------- */
+form{ display:flex; flex-direction:column; gap:var(--space-3) }
+label{ display:block; font-weight:600; margin-bottom:6px; font-size:var(--fs-sm) }
+
+.input-row{ display:flex; gap:var(--space-2); align-items:center; }
+.input-row > *{ flex:1 }
+
+/* inputs */
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea{
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid var(--color-border);
+  background:var(--color-surface);
+  font-size:var(--fs-sm);
+  transition: box-shadow .12s, border-color .12s;
+}
+input:focus, select:focus, textarea:focus{
+  outline:none;
+  border-color:var(--color-primary);
+  box-shadow:0 8px 22px rgba(13,110,253,0.08);
+}
+
+/* estado de erro */
+.is-invalid{ border-color:var(--color-danger) !important; box-shadow:0 6px 18px rgba(220,53,69,0.06) }
+
+/* hint / help text */
+.field-help{ font-size:var(--fs-xs); color:var(--color-muted) }
+
+/* ----------------------   ALERTS / TOASTS / MODAL   ---------------------- */
+.alert{
+  padding:12px; border-radius:8px; display:flex; gap:12px; align-items:center;
+}
+.alert.info{ background: rgba(13,110,253,0.06); border:1px solid rgba(13,110,253,0.12); color:var(--color-primary) }
+.alert.success{ background: rgba(32,201,151,0.06); border:1px solid rgba(32,201,151,0.12); color:var(--color-accent) }
+.alert.warn{ background: rgba(255,193,7,0.06); border:1px solid rgba(255,193,7,0.12); color:var(--color-warning) }
+.alert.danger{ background: rgba(220,53,69,0.06); border:1px solid rgba(220,53,69,0.12); color:var(--color-danger) }
+
+/* toasts container (fixo) */
+.toasts{
+  position:fixed; right:var(--space-2); bottom:var(--space-2); display:flex; flex-direction:column; gap:8px; z-index:1400;
+}
+
+/* modal */
+.modal-backdrop{
+  position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.4); z-index:1500;
+}
+.modal-backdrop.open{ display:flex }
+.modal{
+  background:var(--color-surface); padding:var(--space-3); border-radius:var(--radius-md);
+  box-shadow:var(--shadow-md); min-width:320px; max-width:720px;
+}
+
+/* ----------------------   UTILS (80/20) & LAYOUTS ESPECÍFICOS   ---------------------- */
+/* margem util */
+.mt-1{ margin-top:var(--space-1) }
+.mt-2{ margin-top:var(--space-2) }
+.mt-3{ margin-top:var(--space-3) }
+
+/* layout específico: hero / index */
+.layout-hero{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:var(--space-3);
+  align-items:center;
+}
+
+/* layout específico: projetos com cards */
+.layout-projects{ padding:var(--space-3) }
+
+/* layout específico: formulário (cadastro) */
+.layout-form{ max-width:900px; margin:0 auto; padding:var(--space-3) }
+
+/* generic container for page's content */
+.page-section{ background:var(--color-surface); padding:var(--space-3); border-radius:var(--radius-sm); box-shadow:var(--shadow-sm) }
+
+/* ---------------------- RESPONSIVIDADE  ----------------------*/
+
+/* mobile base (aplica-se a todos inicialmente) */
+@media (max-width: 480px){
+  /* mostrar hamburguer */
+  .menu-toggle{ display:inline-flex }
+
+  /* menu vertical no mobile - escondido por padrão, JS adiciona .show */
+  .menu{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:64px;
+    right:12px;
+    background:var(--color-primary);
+    padding:8px;
+    border-radius:10px;
+    box-shadow:var(--shadow-md);
+    display:none;
+    width:220px;
+    z-index:1300;
+  }
+  .menu.show{ display:flex }
+
+  /* Submenu no mobile: posicionado estático (abre por clique) */
+  .submenu{ position:static; display:none; background:transparent; box-shadow:none; border:none; padding:0 }
+  .submenu.show{ display:flex; flex-direction:column }
+  .has-submenu > a::after{ content:"▸"; float:right; margin-left:8px }
+  .has-submenu.open > a::after{ content:"▾"; }
+
+  /* texto menor e espaçamentos reduzidos */
+  .header h1{ font-size:var(--fs-lg) }
+  .container, .container-index{ padding:var(--space-2) }
+
+  /* grid colspans simplificados */
+  .grid-12{ grid-template-columns: repeat(4, 1fr) }
+  .col-6{ grid-column:span 4 } .col-4{ grid-column:span 4 } .col-3{ grid-column:span 4 }
+}
+
+/* 481px - 768px */
+@media (min-width:481px) and (max-width:768px){
+  .menu-toggle{ display:inline-flex }
+  .menu{ display:flex; flex-direction:row; gap:8px; position:static; background:transparent; width:auto; box-shadow:none }
+  .submenu{ position:absolute; top:44px; left:0 } /* dropdown luz */
+  .grid-12{ grid-template-columns: repeat(6, 1fr) }
+}
+
+/* 769px - 1024px */
+@media (min-width:769px) and (max-width:1024px){
+  .menu-toggle{ display:none } /* menu visível como horizontal */
+  .menu{ display:flex; flex-direction:row }
+  .grid-12{ grid-template-columns: repeat(8, 1fr) }
+  .container{ padding:var(--space-3) }
+  .card-grid{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) }
+}
+
+/* 1025px - 1440px */
+@media (min-width:1025px) and (max-width:1440px){
+  .menu{ gap:var(--space-3) }
+  .grid-12{ grid-template-columns: repeat(12, 1fr) }
+  .container{ padding:var(--space-4) }
+  /* layout com duas colunas (conteúdo + sidebar) em algumas páginas */
+  .layout-two-col{ display:grid; grid-template-columns:2fr 1fr; gap:var(--space-3) }
+}
+
+/* >=1441px */
+@media (min-width:1441px){
+  :root{ --space-4:40px } /* aumentar espaçamento em telas muito grandes */
+  body{ font-size:1.03rem }
+  .container{ max-width:1400px; margin:0 auto }
+}
 
 
+/* botão de voltar/submit minimal */
+button[type="submit"], button[type="reset"]{ cursor:pointer }
 
+/* imagens responsivas em figure */
+figure img{ width:100%; height:auto; display:block; border-radius:8px }
 
-    .header{
-        text-align: center;
-        display: flex;       
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        background: var(--color-primary);
-        color: white;
+/* rodapé */
+.footer, footer{ margin-top:var(--space-4); text-align:center; padding:var(--space-2); color:var(--color-muted) }
 
-        padding: 20px;
-        background: var(--color-primary-600);
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    }
-
-    .header-content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .menu-toggle {
-        background: transparent;
-        color: white;
-        border: none;
-        font-size: 26px;
-        cursor: pointer;
-    }
-    .nav {
-         text-align: center;
-    }
-
-    .menu {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 20px;
-        justify-content: right;
-        flex-wrap: wrap;
-    }
-    section {
-    background: var(--color-surface);
-    border-radius: var(--radius);
-    padding: 24px;
-    box-shadow: var(--shadow);
-    }
-
-    .menu li a {
-        color: white;
-        text-decoration: none;
-        padding: 8px 16px;
-        border-radius: 6px;
-        transition: background 0.3s;
-    }
-
-    .menu li a:hover {
-        background: rgba(255, 255, 255, 0.25);
-    }
-
-    
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: var(--color-primary);
-        color: #000;
-        padding: var(--space-1);
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .menu {
-        color: var(--color-surface);
-        display: flex;
-        padding: 10px;
-        text-decoration: none;
-        }
-    .menu li {
-        margin-left: 10px;
-        padding: 10px;
-        background-color: var(--color-accent);
-        border-radius: 20px;
-    } 
-    .menu li a {
-        display: block;
-        padding: 10px;
-    }
-    .footer{
-        background-color: var(--color-muted);
-        font-size: large;
-        color: var(--color-surface);
-    }
-    img {
-    max-width: 100%;
-    align-items:center;
-    }
-    .flex{
-        display: flex;
-        margin: 0 auto;
-        max-width: 800px;
-        
-    }
-    .flex div{
-        padding: 10px;
-    }
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    .grid-pr {
-        display: grid;
-        margin: 0px;
-        columns: 3;
-    }
-    .btn{
-    
-        text-align: center;
-        font-size: x-large;
-        background: var(--color-secondary);
-    }
-
-
-
-
-        /*PAGINA DE CADASTRO*/
-
-
-    .header_cad {
-        background: var(--color-primary);
-        color: white;
-        text-align: center;
-        padding: var(--space-3);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-    }          
-
-    .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    }
-
-    fieldset {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: var(--space-3);
-    margin-bottom: var(--space-3);
-    }
-
-    legend {
-    font-weight: bold;
-    color: var(--color-primary);
-    }
-
-    label {
-    display: block;
-    font-weight: 600;
-    font-size: var(--font-sm);
-    margin-bottom: 4px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"],
-    input[list] {
-        width: 100%;
-        padding: var(--space-1);
-        font-size: var(--font-sm);
-        border-radius: var(--radius);
-        border: 1px solid var(--color-border);
-        box-sizing: border-box;
-        transition: border 0.2s, box-shadow 0.2s;
-    }
-
-    input:focus {
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
-        outline: none;
-    }
-    input[type="radio"] {
-        margin-right: 6px;
-    }
-    button {
-        background: var(--color-primary);
-        color: white;
-        border: none;
-        border-radius: var(--radius);
-        padding: var(--space-1) var(--space-2);
-        font-weight: bold;
-        cursor: pointer;
-    }
-    button:hover {
-        background: var(--color-muted);
-    }
-    button:active {
-        transform: scale(0.97);
-    }
-    .btn {
-        text-align: center;
-        margin-top: var(--space-3);
-    }
-    .btn button {
-        margin: 0 var(--space-1);
-    }
-    .footer {
-        text-align: center;
-        padding: var(--space-2);
-        margin-top: var(--space-4);
-        color: var(--color-text);
-        font-size: var(--font-sm);
-        background: var(--color-surface);
-        border-radius: var(--radius);
-        box-shadow: var(--shadow);
-    }
-    @media (max-width: 768px) {
-        main {
-            padding: var(--space-3);
-    }
-    fieldset {
-        padding: var(--space-2);
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"] {
-        font-size: var(--font-sm);
-    }
-    button {
-        width: 100%;
-        margin-top: var(--space-2);
-    }
-    }
+:focus{ outline:3px solid rgba(13,110,253,0.08); outline-offset:2px }
