@@ -8,9 +8,10 @@
   --color-danger: #dc3545;        /* vermelho - erro */
   --color-muted: #6c757d;         /* texto secundário */
   --color-surface: #ffffff;       /* superfícies (cards, modais) */
-  --color-bg: #f7fbff;            /* fundo da aplicação */
+  --color-bg: #e2e2e2;            /* fundo da aplicação */
   --color-border: #e6eefc;        /* bordas suaves */
   --color-text: #0f1724;          /* texto principal */
+
 
   /* Estabelecer tipografia hierárquica com no mínimo 5 tamanhos de fonte (5 tamanhos) */
   --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -418,11 +419,11 @@ input:valid {
 /* ====== Modo Escuro e Alto Contraste ====== */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #121212;
-    color: #f2f2f2;
+    background-color: #ffffff;
+    color: #000000;
   }
   .header, .footer {
-    background: #1f1f1f;
+    background: #ffffff;
   }
   a, .btn {
     color: #fff;
@@ -440,5 +441,5 @@ body.dark-mode {
   color: #f2f2f2;
 }
 body.dark-mode .header, body.dark-mode .footer {
-  background: #1f1f1f;
+  background: #000000;
 }
